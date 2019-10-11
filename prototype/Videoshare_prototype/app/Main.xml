@@ -1,0 +1,71 @@
+﻿<project version="2.9" name="Project" ID="CDEF61BB-3775-45EE-969E-A5D022ED00A7">
+  <params>
+    <pageParam version="5.3" minAllowVersion="5.3"/>
+    <projectParam version="2.9" minAllowVersion="2.9" platform="MtMobile" orientation="MoPortrait" mobileScreenScale="1.77777779102325" mobileType="mmtAndroid" pageSize="(360,640)" backgroundColor="4294967295" fontSize="0" fontFamily="" projectType="ptPersonalProject" isShowTitleIndex="False"/>
+    <previewParam version="1.0"/>
+    <colorParam version="1.0"/>
+  </params>
+  <pages>
+    <page name="Start - 1" ID="C06EC343-444C-4991-85DC-E16C96483C26" expanded="True" code="nPOPeSPpzK" thumbCode="nPOPeSPpzK" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="ADC04E8CF3268A899608EE42C432E48E.svg"/>
+      </images>
+      <page name="Facebook-login" ID="8ED17A5D-043B-4521-8793-ED15AA972E12" expanded="False" code="MgMEpGSEdz" thumbCode="MgMEpGSEdz" status="psWhite" isfolder="False" isshownode="True">
+        <images>
+          <image key="ADC04E8CF3268A899608EE42C432E48E.svg"/>
+          <image key="671B6BE607975A74FB470B2A24F33C46.svg"/>
+          <image key="69A4D1E5CE13432C6A4F579026917C6A.svg"/>
+        </images>
+      </page>
+      <page name="Username-login" ID="8C832230-E91E-4259-9A7E-543C7CE29EFB" expanded="True" code="gMQrpFbtmU" thumbCode="gMQrpFbtmU" status="psWhite" isfolder="False" isshownode="True">
+        <images>
+          <image key="467605F5F90D9FF65132C1A6EF883F26.svg"/>
+        </images>
+      </page>
+    </page>
+    <page name="Video" ID="45DF3A8E-5CED-48DD-A472-3B020DE8E429" expanded="True" code="Fn2fhDiHrZ" thumbCode="Fn2fhDiHrZ" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="F1A083532284A2F27691E1826CCF3A21.svg"/>
+        <image key="B91434690C5B5224D1CC6B1998F1178A.svg"/>
+        <image key="467605F5F90D9FF65132C1A6EF883F26.svg"/>
+        <image key="6435FAA4924A62D32BF5E6A70174E146.svg"/>
+      </images>
+      <page name="Landscape Video" ID="44F33D84-ABD9-4ACD-9788-BCB5CC92CF08" expanded="True" code="MkA6denSoI" thumbCode="MkA6denSoI" status="psWhite" isfolder="False" isshownode="True"/>
+    </page>
+    <page name="Message" ID="45D05DDB-1C41-41FB-A906-C5068813E9AE" expanded="False" code="A4CLJRF33k" thumbCode="A4CLJRF33k" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="F1A083532284A2F27691E1826CCF3A21.svg"/>
+        <image key="B91434690C5B5224D1CC6B1998F1178A.svg"/>
+        <image key="6435FAA4924A62D32BF5E6A70174E146.svg"/>
+      </images>
+    </page>
+    <page name="About Me" ID="244181E9-E810-44DF-BFD7-8716873C4432" expanded="True" code="3gNAo8CiMc" thumbCode="3gNAo8CiMc" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="F1A083532284A2F27691E1826CCF3A21.svg"/>
+        <image key="B91434690C5B5224D1CC6B1998F1178A.svg"/>
+        <image key="467605F5F90D9FF65132C1A6EF883F26.svg"/>
+        <image key="6435FAA4924A62D32BF5E6A70174E146.svg"/>
+      </images>
+    </page>
+    <page name="User Info" ID="CF9ED1C8-6D28-4112-91E3-2F946D6D7F0A" expanded="True" code="fLAxGm8SyS" thumbCode="fLAxGm8SyS" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="467605F5F90D9FF65132C1A6EF883F26.svg"/>
+      </images>
+    </page>
+  </pages>
+  <trash>
+    <page name="Home" ID="27F0A598-70F4-4EFA-B0ED-B6F23A27F5F1" expanded="True" code="rpZjbshHlU" thumbCode="tVbqxL1vf7" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True"/>
+    <page name="Profile" ID="2740073A-AAAC-4B95-93C2-87BF2825CB70" expanded="False" code="5225Z91p8m" thumbCode="jCeiHBqT3c" status="psWhite" isfolder="False" isshownode="True"/>
+  </trash>
+  <deletes/>
+  <masters/>
+  <images>
+    <image key="ADC04E8CF3268A899608EE42C432E48E.svg"/>
+    <image key="F1A083532284A2F27691E1826CCF3A21.svg"/>
+    <image key="B91434690C5B5224D1CC6B1998F1178A.svg"/>
+    <image key="69A4D1E5CE13432C6A4F579026917C6A.svg"/>
+    <image key="6435FAA4924A62D32BF5E6A70174E146.svg"/>
+    <image key="467605F5F90D9FF65132C1A6EF883F26.svg"/>
+    <image key="671B6BE607975A74FB470B2A24F33C46.svg"/>
+  </images>
+</project>
