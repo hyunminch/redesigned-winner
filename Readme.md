@@ -5,7 +5,7 @@ Mobile Computing 2019 - VideoShare
 
 The prototype of our application (named temporarily as VideoShare) is located in the prototype folder of this repository. The application prototype is made with [mockplus](https://www.mockplus.com/). 
 
-Inside the prototype folder, the original mockplus file `VideoShare_prototype.mp`, and a `VideoShare_prototype` directoyr which contains the `html` rendered contents based on the `.mp` file.
+Inside the prototype folder, there are the original mockplus file `VideoShare_prototype.mp`, and the `VideoShare_prototype` folder which contains the `html` rendered contents based on the `.mp` file.
 
 The file structure looks like this:
 
