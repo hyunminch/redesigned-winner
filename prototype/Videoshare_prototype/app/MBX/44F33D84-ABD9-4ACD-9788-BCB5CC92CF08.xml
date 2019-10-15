@@ -1,0 +1,17 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="44F33D84-ABD9-4ACD-9788-BCB5CC92CF08" platform="MtMobile" defaultW="360" defaultH="640" measureW="640" measureH="360" screenOrientation="MoLandscape" mobileScreenScale="1.77777779102325" clipArea="(0,0,0,0)">
+  <controls controlCount="1">
+    <control controlID="FE7CB87D-551D-4F0E-A4B9-587BD71C5867" controlTypeID="VideoPlayer" x="0" y="0" w="640" h="360" zOrder="0">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="45DF3A8E-5CED-48DD-A472-3B020DE8E429" linkType="ltPageLink" isApplyIncludePage="False" title="Video">
+          <area shape="0" alt="" ID="{2041A48F-47B1-442F-AE98-016C358CA687}" coords="(0,0,640,360)"/>
+        </link>
+      </links>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>0</fontSize>
+    <fontFamily/>
+    <guideLines/>
+  </param>
+</mockup>

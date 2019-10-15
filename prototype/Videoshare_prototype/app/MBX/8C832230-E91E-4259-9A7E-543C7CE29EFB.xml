@@ -1,0 +1,62 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="8C832230-E91E-4259-9A7E-543C7CE29EFB" platform="MtMobile" defaultW="360" defaultH="640" measureW="360" measureH="640" screenOrientation="MoPortrait" mobileScreenScale="1.77777779102325" clipArea="(0,0,0,0)">
+  <controls controlCount="5">
+    <control controlID="270D7342-BA99-4279-8A8F-FCA7011CCB35" controlTypeID="TextInput" x="40" y="279" w="280" h="46" zOrder="0">
+      <font family="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" displayName="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <textAlign>HaCenter</textAlign>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <placeHolder>Username</placeHolder>
+      <radius>19</radius>
+    </control>
+    <control controlID="A4CBCC55-1473-4323-B25F-02D03872A4E5" controlTypeID="TextInput" x="40" y="350" w="280" h="44" zOrder="1">
+      <font family="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" displayName="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <textAlign>HaCenter</textAlign>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <placeHolder>Password</placeHolder>
+      <inputModel>emPassword</inputModel>
+      <radius>19</radius>
+    </control>
+    <control controlID="00F0B21F-5459-40B7-A369-95EF53006C02" controlTypeID="CheckBox" x="40" y="404" w="140" h="36" zOrder="2">
+      <font family="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" displayName="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Remember+me</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <size>15</size>
+    </control>
+    <control controlID="ECA00F71-4130-4A61-9C89-07232454D8ED" controlTypeID="Shape" x="92" y="450" w="175" h="51" zOrder="3">
+      <color>4284900966</color>
+      <borderVisible>False</borderVisible>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="45DF3A8E-5CED-48DD-A472-3B020DE8E429" linkType="ltPageLink" isApplyIncludePage="False" title="Video">
+          <area shape="0" alt="" ID="{663B0BB2-9410-445C-91FE-49C4463DB822}" coords="(0,0,175,51)"/>
+        </link>
+      </links>
+      <font family="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" displayName="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91+Bold" postScript="" weightStyle="Bold" weight="700" isBold="True" isItalic="False"/>
+      <text>LOG+IN</text>
+      <textColor>4294967295</textColor>
+      <textSize>14</textSize>
+      <textStyles>[fsBold]</textStyles>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="AA3011E1-EAD3-4A6E-9A49-9CF04B1485A0" controlTypeID="AvatarEx2" x="116" y="101" w="128" h="128" zOrder="4">
+      <borderVisible>False</borderVisible>
+      <avatarShapeStyle>asCircle</avatarShapeStyle>
+      <avatarBackgroundColor>4284900966</avatarBackgroundColor>
+      <icon>
+        <ID/>
+        <iconFontName>jdiconfontB</iconFontName>
+        <iconCode>59652</iconCode>
+      </icon>
+      <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>14</fontSize>
+    <fontFamily>%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91</fontFamily>
+    <guideLines/>
+  </param>
+</mockup>

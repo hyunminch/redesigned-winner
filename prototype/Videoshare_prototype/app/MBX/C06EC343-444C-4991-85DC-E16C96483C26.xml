@@ -1,0 +1,72 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="C06EC343-444C-4991-85DC-E16C96483C26" platform="MtMobile" defaultW="360" defaultH="640" measureW="360" measureH="640" screenOrientation="MoPortrait" mobileScreenScale="1.77777779102325" clipArea="(0,0,0,0)">
+  <controls controlCount="6">
+    <control controlID="83125D79-007B-4A9D-B8D7-5C4451D01E34" controlTypeID="Icon" x="112" y="74" w="136" h="136" zOrder="0">
+      <icon>
+        <ID/>
+        <iconFontName>jdiconfontA</iconFontName>
+        <iconCode>59772</iconCode>
+      </icon>
+      <URL>ADC04E8CF3268A899608EE42C432E48E.svg</URL>
+    </control>
+    <control controlID="F4E5EECB-0DCC-48C9-8873-58D54875FC6F" controlTypeID="Label" x="118" y="230" w="123" h="39" zOrder="1">
+      <font family="Agency+FB" displayName="Agency+FB+Bold" postScript="" weightStyle="Bold" weight="700" isBold="True" isItalic="False" useDefaultFontFamily="False"/>
+      <text>VideoShare</text>
+      <textSize>32</textSize>
+      <lineSpacing>0</lineSpacing>
+      <textStyles>[fsBold]</textStyles>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="FC792F0A-338C-4CD2-A581-52A047109878" controlTypeID="Label" x="154" y="327" w="53" h="22" zOrder="2">
+      <font family="Bahnschrift+Light" displayName="Bahnschrift+Light" postScript="" weightStyle="Light" weight="300" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Register</text>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="AD877486-793C-43D0-9D2E-6C800E6EB77A" controlTypeID="Shape" x="74" y="367" w="213" h="51" zOrder="3">
+      <color>4284900966</color>
+      <borderVisible>False</borderVisible>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="8ED17A5D-043B-4521-8793-ED15AA972E12" linkType="ltPageLink" isApplyIncludePage="False" title="Facebook-login">
+          <area shape="0" alt="" ID="{663B0BB2-9410-445C-91FE-49C4463DB822}" coords="(0,0,213,51)"/>
+        </link>
+      </links>
+      <font family="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" displayName="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91+Bold" postScript="" weightStyle="Bold" weight="700" isBold="True" isItalic="False"/>
+      <text>Use+Facebook</text>
+      <textColor>4294967295</textColor>
+      <textSize>14</textSize>
+      <textStyles>[fsBold]</textStyles>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="9F9F2804-F9A0-480A-AEEB-DB312CEA64CD" controlTypeID="Shape" x="74" y="548" w="213" h="51" zOrder="4">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="8C832230-E91E-4259-9A7E-543C7CE29EFB" linkType="ltPageLink" isApplyIncludePage="False" title="Username-login">
+          <area shape="0" alt="" ID="{DC8EEA95-B5D3-4AEF-A7D8-9ECBDF54B98C}" coords="(0,0,213,51)"/>
+        </link>
+      </links>
+      <font family="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" displayName="%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>LOG+IN</text>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+      <radius>8</radius>
+    </control>
+    <control controlID="88CC6BB2-D5FB-422E-AC8D-09D3ECF0955F" controlTypeID="Label" x="100" y="516" w="161" h="22" zOrder="5">
+      <font family="Bahnschrift+Light" displayName="Bahnschrift+Light" postScript="" weightStyle="Light" weight="300" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Already+got+an+account%3F</text>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>0</fontSize>
+    <fontFamily/>
+    <guideLines/>
+  </param>
+</mockup>
