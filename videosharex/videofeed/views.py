@@ -19,7 +19,7 @@ class RecommendYouTubeVideo(APIView):
         return user.id
     
     def get(self, request, format=None):
-        recommendations = YouTubeVideoRecommendation.objects.all()
+        recommendations = YouTubeVideoRecommendation.objects.order_by('-id')
         serializer = YouTubeVideoRecommendationSerializer(recommendations, many=True)
         return Response(serializer.data)
 

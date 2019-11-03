@@ -6,6 +6,10 @@ from videofeed.models import YouTubeVideoRecommendation, YouTubeVideoRecommendat
 
 class YouTubeVideoRecommendationSerializer(serializers.ModelSerializer):
     poster = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    username = serializers.SerializerMethodField()
+    
+    def get_username(self, obj):
+        return obj.poster.username
 
     class Meta:
         fields = '__all__'
