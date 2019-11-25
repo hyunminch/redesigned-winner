@@ -14,7 +14,6 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ['url', 'name']
 
-# TODO(hyunminch): implement
 class FollowerSerializer(serializers.ModelSerializer):
     follower = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
     followed = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
