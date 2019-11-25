@@ -33,5 +33,7 @@ urlpatterns = [
     path('api/videos/recommendation/notifications', videofeedviews.Notifications.as_view()),
     # User Related Views
     path('api/users/follow', usersviews.Follow.as_view()),
+    path('api/users/following', usersviews.Following.as_view()),
+    path('api/users/followers', usersviews.Followers.as_view()),
     path('api/', include(router.urls))
 ]

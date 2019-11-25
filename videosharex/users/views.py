@@ -29,3 +29,21 @@ class Follow(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class Following(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        following = request.user.following.all()
+        serializer = FollowerSerializer(following, many=True)
+        return Response(serializer.data)
+
+class Followers(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        followers = request.user.followers.all()
+        serializer = FollowerSerializer(followers, many=True)
+        return Response(serializer.data)
