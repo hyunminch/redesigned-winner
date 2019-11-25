@@ -27,6 +27,11 @@ router.register(r'groups', usersviews.GroupViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/videos/recommendation/', videofeedviews.RecommendYouTubeVideo.as_view()),
+    # Videofeed Related Views
+    path('api/videos/recommendation', videofeedviews.RecommendYouTubeVideo.as_view()),
+    path('api/videos/recommendation/share', videofeedviews.ShareRecommendation.as_view()),
+    path('api/videos/recommendation/notifications', videofeedviews.Notifications.as_view()),
+    # User Related Views
+    path('api/users/follow', usersviews.Follow.as_view()),
     path('api/', include(router.urls))
 ]
