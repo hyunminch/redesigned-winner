@@ -21,4 +21,5 @@ class YouTubeVideoRecommendationShareSerializer(serializers.ModelSerializer):
     recommendation = serializers.PrimaryKeyRelatedField(queryset=YouTubeVideoRecommendation.objects.all())
 
     class Meta:
+        fields = '__all__'
         model = YouTubeVideoRecommendationShare
