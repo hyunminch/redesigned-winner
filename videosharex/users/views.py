@@ -11,6 +11,22 @@ from users.models import Profile
 from users.serializers import UserSerializer, ProfileSerializer, GroupSerializer, FollowerSerializer
 
 
+class Users(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def serialize_contextually(self, user, following=[]):
+        return {"id": user.id, "username": user.username, "following": user.id in following}
+
+    def get(self, request, format=None):
+        users = User.objects.all().order_by('username')
+        following = [f.followed.id for f in request.user.following.all()]
+        serializer = UserSerializer(users, many=True)
+
+        payloads = [self.serialize_contextually(user, following) for user in users if user.id != request.user.id] 
+        
+        return Response(payloads)
+
 class SignUp(APIView):
     def post(self, request, format=None):
         name = request.data['username']
@@ -64,9 +80,22 @@ class Follow(APIView):
         request.data['follower'] = request.user.id
         serializer = FollowerSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            f = serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class Unfollow(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request, format=None):
+        request.data['follower'] = request.user.id
+        return Response(status=status.HTTP_501_NOT_IMPLEMENTED)
+        # serializer = FollowerSerializer(data=request.data)
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class Following(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]
@@ -85,3 +114,11 @@ class Followers(APIView):
         followers = request.user.followers.all()
         serializer = FollowerSerializer(followers, many=True)
         return Response(serializer.data)
+
+# TODO: implement
+class History(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        pass
