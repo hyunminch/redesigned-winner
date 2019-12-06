@@ -30,12 +30,14 @@ urlpatterns = [
     path('api/videos/recommendation/share', videofeedviews.ShareRecommendation.as_view()),
     path('api/videos/recommendation/notifications', videofeedviews.Notifications.as_view()),
     # User Related Views
-    path('api/users', include(router.urls)),
+    path('api/users/all', usersviews.Users.as_view()),
     path('api/users/signup', usersviews.SignUp.as_view()),
     path('api/users/signin', usersviews.SignIn.as_view()),
     path('api/users/profile', usersviews.ProfileView.as_view()),
     path('api/users/profile/public', usersviews.PublicProfileView.as_view()),
     path('api/users/follow', usersviews.Follow.as_view()),
+    path('api/users/unfollow', usersviews.Unfollow.as_view()),
     path('api/users/following', usersviews.Following.as_view()),
-    path('api/users/followers', usersviews.Followers.as_view())
+    path('api/users/followers', usersviews.Followers.as_view()),
+    path('api/users/history', usersviews.History.as_view())
 ]
