@@ -1,18 +1,23 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-from users.models import Follower
+from users.models import Profile, Follower
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'groups']
+        fields = ['username', 'email', 'groups']
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
+class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
-        fields = ['url', 'name']
+        fields = ['name']
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        field = '__all__'
+        model = Profile
 
 class FollowerSerializer(serializers.ModelSerializer):
     follower = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())

@@ -7,17 +7,46 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 
-from users.serializers import UserSerializer, GroupSerializer, FollowerSerializer
+from users.models import Profile
+from users.serializers import UserSerializer, ProfileSerializer, GroupSerializer, FollowerSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+class SignUp(APIView):
+    def post(self, request, format=None):
+        name = request.data['username']
+        # email = request.data['email']
+        password = request.data['password']
 
-class GroupViewSet(viewsets.ModelViewSet):
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+        user = User.objects.create_user(name, '', password)
+        profile = Profile.objects.create_profile(user, "")
 
+        serializer = UserSerializer(user, context={'request': request})
+        return Response(serializer.data)
+
+class SignIn(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, format=None):
+        return Response()
+
+
+class ProfileView(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        serializer = ProfileSerializer(request.user.profile)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        profile = request.user.profile
+        profile.profile = request.data['profile']
+        profile.save()
+
+        serializer = ProfileSerializer(profile)
+        return Response(serializer.data)
+    
 class Follow(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
