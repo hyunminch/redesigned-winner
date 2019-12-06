@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/users/signup', usersviews.SignUp.as_view()),
     path('api/users/signin', usersviews.SignIn.as_view()),
     path('api/users/profile', usersviews.ProfileView.as_view()),
+    path('api/users/profile/public', usersviews.PublicProfileView.as_view()),
     path('api/users/follow', usersviews.Follow.as_view()),
     path('api/users/following', usersviews.Following.as_view()),
     path('api/users/followers', usersviews.Followers.as_view())

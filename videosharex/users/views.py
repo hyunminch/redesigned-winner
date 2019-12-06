@@ -30,7 +30,6 @@ class SignIn(APIView):
     def post(self, request, format=None):
         return Response()
 
-
 class ProfileView(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
@@ -45,6 +44,16 @@ class ProfileView(APIView):
         profile.save()
 
         serializer = ProfileSerializer(profile)
+        return Response(serializer.data)
+
+class PublicProfileView(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        user_id = request.query_params['id']
+        user = User.objects.get(id=user_id)
+        serializer = ProfileSerializer(user.profile)
         return Response(serializer.data)
     
 class Follow(APIView):
