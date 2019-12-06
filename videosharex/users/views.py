@@ -16,7 +16,8 @@ class Users(APIView):
     permission_classes = [IsAuthenticated]
 
     def serialize_contextually(self, user, following=[]):
-        return {"id": user.id, "username": user.username, "following": user.id in following}
+        following = user.id in following 
+        return {"id": user.id, "username": user.username, "following": following}
 
     def get(self, request, format=None):
         users = User.objects.all().order_by('username')
