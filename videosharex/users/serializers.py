@@ -16,7 +16,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        field = '__all__'
+        fields = '__all__'
         model = Profile
 
 class FollowerSerializer(serializers.ModelSerializer):
