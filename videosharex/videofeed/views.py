@@ -75,12 +75,7 @@ class RecommendYouTubeVideo(APIView):
         shares = YouTubeVideoRecommendationShare.objects.order_by('-created_at')
 
         following_shares = [share for share in shares if share.sharer in following and share.recommendation.poster.id != request.user.id]
-<<<<<<< HEAD
-
-        prioritized_shares = prioritize_similar_preferences(request.user, following_shares)
-=======
         non_redundant_shares = []
->>>>>>> Fix recommendation engine
 
         recommendations = set()
 
