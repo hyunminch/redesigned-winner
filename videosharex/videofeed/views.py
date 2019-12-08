@@ -8,6 +8,7 @@ from rest_framework import status
 
 from videofeed.models import YouTubeVideoRecommendation, YouTubeVideoRecommendationShare
 from videofeed.serializers import YouTubeVideoRecommendationSerializer, YouTubeVideoRecommendationShareSerializer
+from videofeed.engine import prioritize_similar_preferences
 
 
 class Notifications(APIView):
@@ -15,23 +16,57 @@ class Notifications(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
-        return Response(status=status.HTTP_501_NOT_IMPLEMENTED)
+        recommendations = YouTubeVideoRecommendation.objects.all().filter(poster=request.user).order_by('-created_at')
+
+        payloads = []
+
+        for recommendation in recommendations:
+            shares = YouTubeVideoRecommendationShare.objects.filter(recommendation=recommendation)
+            shared_count = len(shares) - 1
+
+            if shared_count > 0:
+                payload = {"video_id": recommendation.video, "message": recommendation.text, "shared_count": shared_count}
+                payloads.append(payload)
+
+        return Response(payloads)
 
 class ShareRecommendation(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
+    def payload(self, request, recommendation):
+        user_shares = YouTubeVideoRecommendationShare.objects.all().filter(sharer=request.user)
+        overlapping = [share for share in user_shares if share.recommendation.id == recommendation.id]
+
+        if len(overlapping) > 0:
+            shared = True
+        else:
+            shared = False
+
+        return {"id": recommendation.id, "username": recommendation.poster.username, "video": recommendation.video, "text": recommendation.text, "shared": shared}
+
     def post(self, request, format=None):
         request.data['sharer'] = request.user.id
         serializer = YouTubeVideoRecommendationShareSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            share = serializer.save()
+            return Response(self.payload(request, share.recommendation))
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RecommendYouTubeVideo(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
+
+    def payload(self, request, recommendation):
+        user_shares = YouTubeVideoRecommendationShare.objects.all().filter(sharer=request.user)
+        overlapping = [share for share in user_shares if share.recommendation.id == recommendation.id]
+
+        if len(overlapping) > 0:
+            shared = True
+        else:
+            shared = False
+
+        return {"id": recommendation.id, "username": recommendation.poster.username, "video": recommendation.video, "text": recommendation.text, "shared": shared}
     
     def get(self, request, format=None):
         _following = request.user.following.all()
@@ -39,12 +74,13 @@ class RecommendYouTubeVideo(APIView):
 
         shares = YouTubeVideoRecommendationShare.objects.order_by('-created_at')
 
-        following_shares = shares
-        # following_shares = [share for share in shares if share.sharer in following]
+        following_shares = [share for share in shares if share.sharer in following]
+        prioritized_shares = prioritize_similar_preferences(request.user, following_shares)
 
         recommendations = [share.recommendation for share in following_shares]
-        serializer = YouTubeVideoRecommendationSerializer(recommendations, many=True)
-        return Response(serializer.data)
+        payloads = [self.payload(request, recommendation) for recommendation in recommendations]
+
+        return Response(payloads)
 
     def post(self, request, format=None):
         request.data['poster'] = request.user.id
@@ -60,6 +96,5 @@ class RecommendYouTubeVideo(APIView):
         share.recommendation = recommendation 
         share.save()
 
-        serializer = YouTubeVideoRecommendationShareSerializer(share)
-
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        share_serializer = YouTubeVideoRecommendationShareSerializer(share)
+        return Response(share_serializer.data, status=status.HTTP_201_CREATED)

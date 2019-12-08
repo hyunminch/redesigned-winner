@@ -17,7 +17,7 @@ class YouTubeVideoRecommendationSerializer(serializers.ModelSerializer):
 
 class YouTubeVideoRecommendationShareSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(label='id', read_only=True)
-    sharer = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
+    sharer = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), default=serializers.CurrentUserDefault())
     recommendation = serializers.PrimaryKeyRelatedField(queryset=YouTubeVideoRecommendation.objects.all())
 
     class Meta:
